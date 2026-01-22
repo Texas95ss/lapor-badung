@@ -36,7 +36,11 @@ class AuthenticatedSessionController extends Controller
         }
 
         // Kalau User biasa, lempar ke Dashboard biasa
-        return redirect('/');
+        
+
+        return redirect('/') 
+            ->with('login_success', 'Selamat Datang Kembali, ' . $request->user()->name . '!');
+    
         
         // --- SELESAI ---
     }
